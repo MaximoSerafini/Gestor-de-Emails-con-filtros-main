@@ -12,5 +12,5 @@ public class EmailBandejas {
         this.bandejaEntrada = new ArrayList<>();
         this.bandejaSalida = new ArrayList<>();
     }
-    //esto llamamos en el manager ?
+    //esto llamamos en el manager ? a
 }
