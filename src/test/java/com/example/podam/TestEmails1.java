@@ -5,10 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
-/**
- * Unit test for simple App.
- */
 public class TestEmails1{
       // Test Esperado
     //public static void main( String[] args ){
@@ -20,7 +16,7 @@ public class TestEmails1{
     //    email.Asunto = “Prueba UCP”
     //    email.Contendo = “Estamos en la materia Paradigmas 2”
     //    email.Remitente = persona1
-    
+
     //    email.Para.Agregar(persona2)
     //    emailManager.Enviar(email)
     //    emailEnviado = emailManager.BandejaEnviados[0]
@@ -46,6 +42,8 @@ public class TestEmails1{
         Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
     
         Email email1 = new Email();
+
+
         email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
         email1.setRemitente(contacto1.getMail());
