@@ -11,4 +11,8 @@ public class Contacto {
         this.nombre = nombre;
         this.mail = mail; 
     }
+
+    public String getMail() {
+        return mail;
+    }
 }
