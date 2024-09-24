@@ -1,9 +1,13 @@
 package com.example.podam;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Email { 
     private String asunto;
     private String contenido;
     private String remitente;
+    public List<Contacto> para;
+
     
     public void setAsunto(String asunto){
         this.asunto = asunto;
@@ -27,5 +31,9 @@ public class Email {
 
     public String getRemitente(){
         return remitente; 
+    }
+
+    public Email() {
+        this.para = new ArrayList<>(); // Inicializa
     }
 }

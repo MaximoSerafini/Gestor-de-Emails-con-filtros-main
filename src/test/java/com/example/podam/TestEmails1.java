@@ -2,6 +2,7 @@ package com.example.podam;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -51,7 +52,17 @@ public class TestEmails1{
         assertEquals("Prueba", email1.getAsunto());
         assertEquals("Prueba Contenido", email1.getContenido());
         assertEquals(contacto1.getMail(), email1.getRemitente());
+    }
 
-        
+    @Test
+    public void prueba_para_1_contacto(){
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+
+        Email email1 = new Email(); 
+
+        email1.para.add(contacto1); 
+
+        assertTrue(email1.para.contains(contacto1));
+        assertEquals(1, email1.para.size());
     }
 }
