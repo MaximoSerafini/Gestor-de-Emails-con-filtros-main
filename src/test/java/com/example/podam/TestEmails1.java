@@ -1,6 +1,8 @@
 package com.example.podam;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 
@@ -18,6 +20,7 @@ public class TestEmails1{
     //    email.Asunto = “Prueba UCP”
     //    email.Contendo = “Estamos en la materia Paradigmas 2”
     //    email.Remitente = persona1
+    
     //    email.Para.Agregar(persona2)
     //    emailManager.Enviar(email)
     //    emailEnviado = emailManager.BandejaEnviados[0]
@@ -41,11 +44,16 @@ public class TestEmails1{
     @Test
     public void test_Contacto_prueba_y_Email(){
         Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
-
+    
         Email email1 = new Email();
-
         email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
-        //email1.setRemitente(contacto1); 
-    } 
+        email1.setRemitente(contacto1.getMail());
+
+        assertEquals("Prueba", email1.getAsunto());
+        assertEquals("Prueba Contenido", email1.getContenido());
+        assertEquals(contacto1.getMail(), email1.getRemitente());
+
+        
+    }
 }
