@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest{
+public class TestEmails1{
       // Test Esperado
     //public static void main( String[] args ){
     //    persona1 = new Contacto(“Nombre 1 Apellido 1”, “persona1@demo.com”)
@@ -43,5 +43,9 @@ public class AppTest{
         Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
 
         Email email1 = new Email();
+
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+        //email1.setRemitente(contacto1); 
     } 
 }
