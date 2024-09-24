@@ -1,14 +1,13 @@
 package com.example.podam;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertArrayEquals;
+import org.junit.Test;
+
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase{
+public class AppTest{
       // Test Esperado
     //public static void main( String[] args ){
     //    persona1 = new Contacto(“Nombre 1 Apellido 1”, “persona1@demo.com”)
@@ -38,4 +37,11 @@ public class AppTest
     //    }
     
     //}
+
+    @Test
+    public void test_Contacto_prueba_y_Email(){
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+
+        Email email1 = new Email();
+    } 
 }
