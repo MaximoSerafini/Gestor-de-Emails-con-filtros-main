@@ -19,8 +19,4 @@ public class Contacto {
     public String getMail() {
         return mail;
     }
-
-    public String getMail() {
-        return mail;
-    }
 }
