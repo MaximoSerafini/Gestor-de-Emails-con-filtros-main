@@ -25,6 +25,10 @@ public class Email {
         return contenido; 
     }
 
+    public List<Contacto> getPara(){
+        return para;
+    }
+
     public void setRemitente(String remitente){
         this.remitente = remitente;
     }
