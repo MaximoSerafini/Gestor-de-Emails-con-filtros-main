@@ -33,6 +33,10 @@ public class Email {
         this.remitente = remitente;
     }
 
+    public void setPara(List<Contacto> para) {
+        this.para = para;
+    }
+
     public String getRemitente(){
         return remitente; 
     }
