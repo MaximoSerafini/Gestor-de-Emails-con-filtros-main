@@ -44,14 +44,13 @@ public class TestEmails1{
     
         Email email1 = new Email();
 
-
         email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
-        email1.setRemitente(contacto1.getMail());
+        email1.setRemitente(contacto1); // contacto!
 
         assertEquals("Prueba", email1.getAsunto());
         assertEquals("Prueba Contenido", email1.getContenido());
-        assertEquals(contacto1.getMail(), email1.getRemitente());
+        assertEquals(contacto1, email1.getRemitente());
     }
 
     @Test
@@ -60,9 +59,11 @@ public class TestEmails1{
 
         Email email1 = new Email(); 
 
-        email1.para.add(contacto1); 
+        email1.para.add(contacto1);
 
         assertTrue(email1.para.contains(contacto1));
         assertEquals(1, email1.para.size());
     }
+
+    
 }

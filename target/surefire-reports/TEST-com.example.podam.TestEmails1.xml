@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.podam.TestEmails1" time="0.057" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="20"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\test-classes;C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\classes;C:\Users\Serra\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Serra\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Buenos_Aires"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
+    <property name="sun.java.command" value="C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156\surefirebooter18108859478396297317.jar C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156 2024-09-24T21-16-36_959-jvmRun1 surefire4946027852997506943tmp surefire_05939342709103791325tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.example.podam.TestEmails1"/>
+    <property name="surefire.test.class.path" value="C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\test-classes;C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\classes;C:\Users\Serra\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Serra\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Serra"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-20"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156\surefirebooter18108859478396297317.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="20.0.1+9-29"/>
+    <property name="user.name" value="Serra"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="C:\Users\Serra\.vscode\extensions\oracle.oracle-java-22.1.2\nbcode\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\Serra\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Serra\AppData\Local\Temp\"/>
+    <property name="java.version" value="20.0.1"/>
+    <property name="user.dir" value="C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-20\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-20\bin;C:\Program Files (x86)\Vim\vim90;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\CMake\bin;C:\Program Files\Go\bin;C:\Program Files\Graphviz\bin;C:\lua-5.4.2_Win64_bin;C:\Program Files\apache-maven-3.9.9\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Serra\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Serra\AppData\Local\Programs\Python\Python311\;C:\Users\Serra\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-20\bin;C:\Users\Serra\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Serra\AppData\Local\GitHubDesktop\bin;C:\Program Files (x86)\Vim\vim90;C:\tools\neovim\nvim-win64\bin;C:\Program Files\Neovim\bin;C:\Users\Serra\AppData\Roaming\npm;C:\Users\Serra\go\bin;C:\Hugo\bin;C:\Program Files\apache-maven-3.9.9\bin;C:\MinGW\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="20.0.1+9-29"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="64.0"/>
+  </properties>
+  <testcase name="prueba_para_1_contacto" classname="com.example.podam.TestEmails1" time="0.011"/>
+  <testcase name="test_Contacto_prueba_y_Email" classname="com.example.podam.TestEmails1" time="0"/>
+</testsuite>
