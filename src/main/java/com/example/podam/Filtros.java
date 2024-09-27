@@ -14,4 +14,12 @@ public class Filtros {
                      .collect(Collectors.toList());
     }
     
+    public static List<Email> filtroPara(List<Email> emails, Contacto destinatario) {
+        
+        Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));
+        
+        return emails.stream()
+                     .filter(para)
+                     .collect(Collectors.toList());
+    }
 }
