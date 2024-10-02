@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.podam.TestEmails1" time="0.057" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.podam.TestEmails1" time="0.05" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="sun.java.command" value="C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156\surefirebooter18108859478396297317.jar C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156 2024-09-24T21-16-36_959-jvmRun1 surefire4946027852997506943tmp surefire_05939342709103791325tmp"/>
+    <property name="sun.java.command" value="C:\Users\Serra\AppData\Local\Temp\surefire15180789068493238033\surefirebooter1810478923811064823.jar C:\Users\Serra\AppData\Local\Temp\surefire15180789068493238033 2024-10-02T17-24-25_518-jvmRun1 surefire3737929627062550842tmp surefire_015992204814174459508tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.example.podam.TestEmails1"/>
+    <property name="test" value="${packageClassName}"/>
     <property name="surefire.test.class.path" value="C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\test-classes;C:\Users\Serra\OneDrive\Escritorio\Jupyter Notebooks\Gestor-de-Emails-con-filtros-main\target\classes;C:\Users\Serra\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Serra\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Serra"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Serra\AppData\Local\Temp\surefire11578302361186170156\surefirebooter18108859478396297317.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Serra\AppData\Local\Temp\surefire15180789068493238033\surefirebooter1810478923811064823.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="20.0.1+9-29"/>
@@ -60,6 +60,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="prueba_para_1_contacto" classname="com.example.podam.TestEmails1" time="0.011"/>
-  <testcase name="test_Contacto_prueba_y_Email" classname="com.example.podam.TestEmails1" time="0"/>
+  <testcase name="initializationError" classname="com.example.podam.TestEmails1" time="0.006">
+    <error message="Method testFiltroAsunto() should be public" type="java.lang.Exception">java.lang.Exception: Method testFiltroAsunto() should be public
+</error>
+  </testcase>
 </testsuite>

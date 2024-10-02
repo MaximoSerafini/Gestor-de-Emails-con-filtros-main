@@ -39,10 +39,6 @@ public class Email {
         return para;
     }
 
-    public void setRemitente(Contacto remitente){
-        this.remitente = remitente;
-    }
-
     public void setPara(List<Contacto> para) {
         this.para = para;
     }
@@ -51,4 +47,7 @@ public class Email {
         return remitente; 
     }
 
+    public void setRemitente(Contacto remitente){
+        this.remitente = remitente;
+    }
 }

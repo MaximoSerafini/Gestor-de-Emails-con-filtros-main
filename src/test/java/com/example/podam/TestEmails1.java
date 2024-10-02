@@ -1,9 +1,10 @@
 package com.example.podam;
 
-import static org.junit.Assert.assertArrayEquals;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 //////////
 public class TestEmails1{
@@ -74,7 +75,39 @@ public class TestEmails1{
         email1.para.add(destinatario);
 
         assertEquals("Test 1", email1.getAsunto());
-        assertTrue(email1.getPara().contains(destinatario));  // Verificar que el destinatario esté en la lista
+        assertTrue(email1.getPara().contains(destinatario));  
     }
+    
+    @Test
+    public void testFiltroAsunto() {
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
 
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.setAsunto("Prueba");
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.setAsunto("aaaaa");
+        email3.setContenido("Prueba aaaa");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroAsunto(correos, "Prueba");
+
+        assertEquals(2, resultado.size()); // cantidad de coinc
+        assertTrue(resultado.contains(email1));
+        assertTrue(resultado.contains(email2));
+    }
 }
