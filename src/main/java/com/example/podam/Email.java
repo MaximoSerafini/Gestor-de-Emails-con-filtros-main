@@ -5,8 +5,18 @@ import java.util.List;
 public class Email { 
     private String asunto;
     private String contenido;
-    private String remitente;
+    private Contacto remitente;
     public List<Contacto> para;
+
+    public Email() {
+        this.para = new ArrayList<>();
+    }
+
+    public Email(String asunto, Contacto remitente, List<Contacto> para) {
+        this.para = para;
+        this.asunto = asunto;
+        this.remitente = remitente;
+    }
 
     
     public void setAsunto(String asunto){
@@ -29,7 +39,7 @@ public class Email {
         return para;
     }
 
-    public void setRemitente(String remitente){
+    public void setRemitente(Contacto remitente){
         this.remitente = remitente;
     }
 
@@ -37,11 +47,8 @@ public class Email {
         this.para = para;
     }
 
-    public String getRemitente(){
+    public Contacto getRemitente(){
         return remitente; 
     }
 
-    public Email() {
-        this.para = new ArrayList<>(); // Inicializa
-    }
 }
