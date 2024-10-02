@@ -67,18 +67,15 @@ public class TestEmails1{
 
     @Test
     public void debe_crear_un_email_simple(){
-        Contacto remitente = new Contacto("Maximo Serafini","prueba@gmail.com");
-        
+        Contacto remitente = new Contacto("Maximo Serafini", "prueba@gmail.com");
+    
         Email email1 = new Email();
         email1.setAsunto("Test 1");
 
-        Contacto destinatario = new Contacto("Alfredo","alfredo@gmail.com");
-        email1.para.add(destinatario);  
+        Contacto destinatario = new Contacto("Alfredo", "alfredo@gmail.com");
+        email1.para.add(destinatario);
 
         assertEquals("Test 1", email1.getAsunto());
-        assertEquals("prueba@gmail.com", email1.getPara());
-
-
-
+        assertTrue(email1.getPara().contains(destinatario));  // Verificar que el destinatario esté en la lista
     }
 }
