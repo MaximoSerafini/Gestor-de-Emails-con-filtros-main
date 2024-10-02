@@ -79,4 +79,35 @@ public class TestEmails1{
         assertTrue(email1.getPara().contains(destinatario));  // Verificar que el destinatario esté en la lista
     }
 }
-   
+    @Test
+    public void verificar_filtro(){
+
+        Contacto prueba1= new Contacto("eduardo", "prueba@gmail.com");
+        Contacto prueba2 = new Contacto("eduardo", "prueba@gmail.com");
+        Contacto prueba3= new Contacto("eduardo", "prueba@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(prueba1); 
+
+        email2.setAsunto("Prueba");
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(prueba2);
+
+        email3.setAsunto("Prueba");
+        email3.setContenido("Prueba Contenido");
+        email3.setRemitente(prueba3);
+
+        
+    
+
+
+
+
+
+
+    }
