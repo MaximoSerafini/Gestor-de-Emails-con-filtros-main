@@ -79,5 +79,4 @@ public class TestEmails1{
         assertTrue(email1.getPara().contains(destinatario));  // Verificar que el destinatario esté en la lista
     }
 }
-    @Test
-    public void prueba_para_2_contactos(){
+   
