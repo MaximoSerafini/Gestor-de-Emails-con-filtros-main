@@ -142,7 +142,56 @@ public class TestEmails1{
 
         assertEquals("Test 1", email1.getAsunto());
         assertTrue(email1.getPara().contains(destinatario));  
+    }
+    
+    @Test
+    public void testFiltroAsunto() {
 
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.setAsunto("Prueba");
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.setAsunto("aaaaa");
+        email3.setContenido("Prueba aaaa");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroAsunto(correos, "Prueba");
+
+        assertEquals(2, resultado.size()); // cantidad de coinc
+        assertTrue(resultado.contains(email1));
+        assertTrue(resultado.contains(email2));
+    }
+
+    @Test
+    public void testFiltroPara() {
+        Contacto destinatario = new Contacto("Maxi", "maxi@gmail.com");
+
+        Email email1 = new Email("Prueba 1", new Contacto("Santi", "santi@gmail.com"), List.of(destinatario));
+        Email email2 = new Email("Prueba 2", new Contacto("Santi", "santi@gmail.com"), List.of(destinatario));
+
+        List<Email> emails = List.of(email1, email2);
+
+        List<Email> resultado = Filtros.filtroPara(emails, destinatario);
+
+        assertEquals(2, resultado.size());
+        assertTrue(resultado.contains(email1));
+        assertTrue(resultado.contains(email2));
     }
 
     @Test
