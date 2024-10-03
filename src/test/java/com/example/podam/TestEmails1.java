@@ -96,6 +96,24 @@ public class TestEmails1{
     }
 
     @Test
+    public void prueba_para_3_contactos(){
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+        Contacto contacto2 = new Contacto("Gabriel Fagundez","ositofagundez@gmail.com");
+        Contacto contacto3 = new Contacto("Santiago Serrano","serranoelcrack@gmail.com");
+
+        Email email1 = new Email(); 
+
+        email1.para.add(contacto1);
+        email1.para.add(contacto2);
+        email1.para.add(contacto3);
+    
+        assertTrue(email1.para.contains(contacto1));
+        assertTrue(email1.para.contains(contacto2));
+        assertTrue(email1.para.contains(contacto3));
+        assertEquals(3, email1.para.size());
+    }
+
+    @Test
     public void prueba_para_completo(){
         Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
 
@@ -157,5 +175,25 @@ public class TestEmails1{
         assertEquals(2, resultado.size()); // cantidad de coinc
         assertTrue(resultado.contains(email1));
         assertTrue(resultado.contains(email2));
+    }
+
+    @Test
+    public void guarda_email_bandeja_de_entrada(){
+        Contacto alfredo = new Contacto("Alfredo", "alfredo@gmail.com");  
+        EmailManager bandejaentrada = new EmailManager(alfredo);  
+
+        Email email1 = new Email();
+        email1.setAsunto("Test 1");
+
+        email1.para.add(alfredo);  
+
+        bandejaentrada.getBandejaEntrada().add(email1); 
+
+        assertEquals(1, bandejaentrada.getBandejaEntrada().size());
+        assertEquals("Test 1", email1.getAsunto());
+        assertTrue(email1.getPara().contains(alfredo));  
+
+        // Deberia ser Alfredo :)
+        assertEquals(alfredo, bandejaentrada.getPropietario());
     }
 }
