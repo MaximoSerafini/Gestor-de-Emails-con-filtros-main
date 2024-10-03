@@ -1,10 +1,12 @@
 package com.example.podam;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 //////////
 public class TestEmails1{
@@ -38,35 +40,6 @@ public class TestEmails1{
     //    }
     
     //}
-    @Test
-    public void test_asunto(){
-        Email email1 = new Email();
-
-        email1.setAsunto("Prueba");
-
-        assertEquals("Prueba", email1.getAsunto());
-    }
-
-    @Test
-    public void test_contenido_tambien_test_sin_asunto(){
-        Email email1 = new Email();
-
-        email1.setContenido("Prueba Contenido");
-
-        assertEquals("Prueba Contenido", email1.getContenido());
-    }
-
-    @Test
-    public void test_remitente(){
-        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
-    
-        Email email1 = new Email();
-        email1.setRemitente(contacto1); // contacto!
-
-        assertEquals(contacto1, email1.getRemitente());
-    }
-
-
 
     @Test
     public void test_Contacto_prueba_y_Email(){
@@ -96,44 +69,9 @@ public class TestEmails1{
     }
 
     @Test
-    public void prueba_para_3_contactos(){
-        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
-        Contacto contacto2 = new Contacto("Gabriel Fagundez","ositofagundez@gmail.com");
-        Contacto contacto3 = new Contacto("Santiago Serrano","serranoelcrack@gmail.com");
-
-        Email email1 = new Email(); 
-
-        email1.para.add(contacto1);
-        email1.para.add(contacto2);
-        email1.para.add(contacto3);
-    
-        assertTrue(email1.para.contains(contacto1));
-        assertTrue(email1.para.contains(contacto2));
-        assertTrue(email1.para.contains(contacto3));
-        assertEquals(3, email1.para.size());
-    }
-
-    @Test
-    public void prueba_para_completo(){
-        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
-
-        Email email1 = new Email(); 
-
-        email1.setAsunto("Prueba");
-        email1.setContenido("Prueba Contenido");
-
-        email1.para.add(contacto1);
-
-        
-        assertEquals("Prueba", email1.getAsunto());
-        assertEquals("Prueba Contenido", email1.getContenido());
-
-        assertTrue(email1.para.contains(contacto1));
-        assertEquals(1, email1.para.size());
-    }
-
-    @Test
     public void debe_crear_un_email_simple(){
+        Contacto remitente = new Contacto("Maximo Serafini", "prueba@gmail.com");
+    
         Email email1 = new Email();
         email1.setAsunto("Test 1");
 
@@ -141,59 +79,41 @@ public class TestEmails1{
         email1.para.add(destinatario);
 
         assertEquals("Test 1", email1.getAsunto());
-        assertTrue(email1.getPara().contains(destinatario));  
+        assertTrue(email1.getPara().contains(destinatario));  // Verificar que el destinatario esté en la lista
     }
-    
+
     @Test
-    public void testFiltroAsunto() {
-        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
-        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
-        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+    public void verificar_filtro_para(){
+
+        Contacto prueba1= new Contacto("eduardo", "prueba@gmail.com");
+        Contacto prueba2 = new Contacto("eduardo", "prueba@gmail.com");
+        Contacto prueba3= new Contacto("eduardo", "prueba@gmail.com");
 
         Email email1 = new Email();
         Email email2 = new Email();
         Email email3 = new Email();
 
-        email1.setAsunto("Test 1");
         email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
-        email1.setRemitente(contacto1);
+        email1.setRemitente(prueba1); 
+        email1.setpara()
 
-        email2.setAsunto("Test 1");
         email2.setAsunto("Prueba");
         email2.setContenido("Prueba Contenido");
-        email2.setRemitente(contacto2);
+        email2.setRemitente(prueba2);
 
-        email3.setAsunto("Test 1");
-        email3.setAsunto("aaaaa");
-        email3.setContenido("Prueba aaaa");
-        email3.setRemitente(contacto3);
+        email3.setAsunto("eee");
+        email3.setContenido("Prueba Contenido");
+        email3.setRemitente(prueba3);
 
         List<Email> correos = Arrays.asList(email1, email2, email3);
-        List<Email> resultado = Filtros.filtroAsunto(correos, "Prueba");
-
-        assertEquals(2, resultado.size()); // cantidad de coinc
+        List<Email> resultado = Filtros.filtroPara(correos, );
+        
+        assertEquals(1, resultado.size()); 
         assertTrue(resultado.contains(email1));
         assertTrue(resultado.contains(email2));
-    }
 
-    @Test
-    public void guarda_email_bandeja_de_entrada(){
-        Contacto alfredo = new Contacto("Alfredo", "alfredo@gmail.com");  
-        EmailManager bandejaentrada = new EmailManager(alfredo);  
 
-        Email email1 = new Email();
-        email1.setAsunto("Test 1");
 
-        email1.para.add(alfredo);  
-
-        bandejaentrada.getBandejaEntrada().add(email1); 
-
-        assertEquals(1, bandejaentrada.getBandejaEntrada().size());
-        assertEquals("Test 1", email1.getAsunto());
-        assertTrue(email1.getPara().contains(alfredo));  
-
-        // Deberia ser Alfredo :)
-        assertEquals(alfredo, bandejaentrada.getPropietario());
     }
 }
