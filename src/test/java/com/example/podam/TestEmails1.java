@@ -142,51 +142,7 @@ public class TestEmails1{
 
         assertEquals("Test 1", email1.getAsunto());
         assertTrue(email1.getPara().contains(destinatario));  
-    }
-    
-    @Test
-    public void testFiltroAsunto() {
-        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
-        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
-        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
-        public void verificar_filtro_para(){
-        Contacto prueba1= new Contacto("eduardo", "prueba@gmail.com");
-        Contacto prueba2 = new Contacto("eduardo", "prueba@gmail.com");
-        Contacto prueba3= new Contacto("eduardo", "prueba@gmail.com");
 
-        Email email1 = new Email();
-        Email email2 = new Email();
-        Email email3 = new Email();
-
-        email1.setAsunto("Test 1");
-        email1.setAsunto("Prueba");
-        email1.setContenido("Prueba Contenido");
-        email1.setRemitente(contacto1);
-        email1.setRemitente(prueba1); 
-        email1.setpara()
-
-        email2.setAsunto("Test 1");
-        email2.setAsunto("Prueba");
-        email2.setContenido("Prueba Contenido");
-        email2.setRemitente(contacto2);
-        email2.setRemitente(prueba2);
-
-        email3.setAsunto("Test 1");
-        email3.setAsunto("aaaaa");
-        email3.setContenido("Prueba aaaa");
-        email3.setRemitente(contacto3);
-        email3.setAsunto("eee");
-        email3.setContenido("Prueba Contenido");
-        email3.setRemitente(prueba3);
-
-        List<Email> correos = Arrays.asList(email1, email2, email3);
-        List<Email> resultado = Filtros.filtroAsunto(correos, "Prueba");
-        assertEquals(2, resultado.size()); // cantidad de coinc
-        List<Email> resultado = Filtros.filtroPara(correos, );
-        
-        assertEquals(1, resultado.size()); 
-        assertTrue(resultado.contains(email1));
-        assertTrue(resultado.contains(email2));
     }
 
     @Test
@@ -208,4 +164,34 @@ public class TestEmails1{
         // Deberia ser Alfredo :)
         assertEquals(alfredo, bandejaentrada.getPropietario());
     }
+
+    @Test
+    public void guarda_email_bandeja_de_salida(){
+        Contacto remitente = new Contacto("Pedro", "pedro@gmail.com");  
+        Contacto alfredo = new Contacto("Alfredo", "alfredo@gmail.com");  
+        EmailManager bandejaentrada = new EmailManager(alfredo);  
+        EmailManager bandejasalida = new EmailManager(remitente);  
+
+        Email email1 = new Email();
+        email1.setRemitente(remitente);
+        email1.setAsunto("Test 1");
+
+        email1.para.add(alfredo);  
+
+        bandejaentrada.getBandejaEntrada().add(email1);
+        bandejasalida.getBandejaSalida().add(email1);  
+
+        assertEquals(1, bandejaentrada.getBandejaEntrada().size());
+        assertEquals("Test 1", email1.getAsunto());
+        assertTrue(email1.getPara().contains(alfredo));  
+
+        assertEquals(1, bandejasalida.getBandejaSalida().size());
+
+        // Deberia ser Alfredo :)
+        assertEquals(alfredo, bandejaentrada.getPropietario());
+
+        // Deberia ser Pedro
+        assertEquals(remitente, bandejasalida.getPropietario());
+    }
+
 }
