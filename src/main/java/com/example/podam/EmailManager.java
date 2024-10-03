@@ -25,6 +25,14 @@ public class EmailManager {
         this.bandejaEntrada = bandejaentrada;
     }
 
+    public List<Email> getBandejaSalida(){
+        return bandejaSalida;
+    }
+
+    public void setBandejaSalida(List<Email> bandejasalida) {
+        this.bandejaSalida = bandejasalida;
+    }
+
     public Contacto getPropietario(){
         return propietario;
     }

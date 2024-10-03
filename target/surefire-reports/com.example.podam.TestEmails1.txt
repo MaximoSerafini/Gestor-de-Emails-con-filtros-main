@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.podam.TestEmails1
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.05 s <<< FAILURE! - in com.example.podam.TestEmails1
-initializationError(com.example.podam.TestEmails1)  Time elapsed: 0.006 s  <<< ERROR!
-java.lang.Exception: Method testFiltroAsunto() should be public
-
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s - in com.example.podam.TestEmails1
