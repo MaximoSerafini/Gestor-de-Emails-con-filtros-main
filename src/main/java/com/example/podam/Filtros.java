@@ -22,4 +22,12 @@ public class Filtros {
                      .filter(para)
                      .collect(Collectors.toList());
     }
+    public static List<Email> filtroRemitente(List<Email> emails, Contacto remitente) {
+        
+        Predicate<Email> remitenteEmail = email -> email.getRemitente().equals(remitente);
+        
+        return emails.stream()
+                     .filter(remitenteEmail)
+                     .collect(Collectors.toList());
+    }
 }
