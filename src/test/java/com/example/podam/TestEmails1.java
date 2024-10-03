@@ -38,6 +38,35 @@ public class TestEmails1{
     //    }
     
     //}
+    @Test
+    public void test_asunto(){
+        Email email1 = new Email();
+
+        email1.setAsunto("Prueba");
+
+        assertEquals("Prueba", email1.getAsunto());
+    }
+
+    @Test
+    public void test_contenido_tambien_test_sin_asunto(){
+        Email email1 = new Email();
+
+        email1.setContenido("Prueba Contenido");
+
+        assertEquals("Prueba Contenido", email1.getContenido());
+    }
+
+    @Test
+    public void test_remitente(){
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+    
+        Email email1 = new Email();
+        email1.setRemitente(contacto1); // contacto!
+
+        assertEquals(contacto1, email1.getRemitente());
+    }
+
+
 
     @Test
     public void test_Contacto_prueba_y_Email(){
@@ -61,6 +90,25 @@ public class TestEmails1{
         Email email1 = new Email(); 
 
         email1.para.add(contacto1);
+
+        assertTrue(email1.para.contains(contacto1));
+        assertEquals(1, email1.para.size());
+    }
+
+    @Test
+    public void prueba_para_completo(){
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+
+        Email email1 = new Email(); 
+
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+
+        email1.para.add(contacto1);
+
+        
+        assertEquals("Prueba", email1.getAsunto());
+        assertEquals("Prueba Contenido", email1.getContenido());
 
         assertTrue(email1.para.contains(contacto1));
         assertEquals(1, email1.para.size());
