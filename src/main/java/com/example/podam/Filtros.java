@@ -4,7 +4,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Filtros {
-    //comentario
 
     public static List<Email> filtroAsunto(List<Email> emails, String filtro) {
     
