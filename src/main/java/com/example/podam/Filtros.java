@@ -22,4 +22,14 @@ public class Filtros {
                      .filter(para)
                      .collect(Collectors.toList());
     }
+
+    public static List<Email> filtroContenido(List<Email> emails, String filtro) {
+    
+        Predicate<Email> porAsunto = email -> email.getContenido().contains(filtro);
+        
+        return emails.stream()
+                     .filter(porAsunto)
+                     .collect(Collectors.toList());
+    }
+
 }
