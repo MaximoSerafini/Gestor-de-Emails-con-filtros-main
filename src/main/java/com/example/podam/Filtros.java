@@ -28,6 +28,6 @@ public class Filtros {
         
         return emails.stream()
                      .filter(remitenteEmail)
-                     .collect(Collectors.toList());
+                     .collect(Collectors.toList()); //filtro remitente
     }
 }
