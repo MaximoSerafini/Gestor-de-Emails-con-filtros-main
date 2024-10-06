@@ -73,4 +73,8 @@ public class EmailManager {
     public void CrearBandeja() { 
         
     }
+
+    public boolean eliminarEmail(Email email, List<Email> bandeja) {
+        return bandeja.remove(email); 
+    }
 }

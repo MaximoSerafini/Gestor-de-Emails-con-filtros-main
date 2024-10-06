@@ -404,6 +404,22 @@ public class TestEmails1{
         assertEquals(email1, bandeja3.getBandejaEntrada().get(0));
     }
 
+    @Test
+    public void testEliminarEmail() {
+        Contacto contacto = new Contacto("Lucas", "lucas@gmail.com");
+        EmailManager manager = new EmailManager(contacto);
+
+        Email email = new Email("Asunto importante", contacto, null);
+
+        manager.bandejaEntrada.add(email);
+        assertEquals(1, manager.bandejaEntrada.size());
+
+        boolean eliminado = manager.eliminarEmail(email, manager.bandejaEntrada);
+
+        assertTrue(eliminado);
+        assertTrue(manager.bandejaEntrada.isEmpty()); // Verifica que la bandeja está vacía
+    }
+
 
     
 }
