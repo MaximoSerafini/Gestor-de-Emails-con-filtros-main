@@ -341,4 +341,35 @@ public class TestEmails1{
         assertEquals(remitente, bandejasalida.getPropietario());
     }
 
+    @Test
+    public void testEnviarEmail() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi", "maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        EmailManager bandeja1 = new EmailManager(contacto1); // bandejas
+        EmailManager bandeja2 = new EmailManager(contacto2);
+        EmailManager bandeja3 = new EmailManager(contacto3);
+
+        Email email1 = new Email();
+        email1.setAsunto("Asunto importante");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email1.setPara(Arrays.asList(contacto2, contacto3));
+
+        bandeja1.enviarEmail(email1, Arrays.asList(contacto2, contacto3), Arrays.asList(bandeja1, bandeja2, bandeja3));
+
+        // bandeja salida contacto 1
+        assertEquals(1, bandeja1.getBandejaSalida().size());
+        assertEquals(email1, bandeja1.getBandejaSalida().get(0));
+
+        //copia bandeja entrada contacto 2 y 3
+        assertEquals(1, bandeja2.getBandejaEntrada().size());
+        assertEquals(email1, bandeja2.getBandejaEntrada().get(0));
+        assertEquals(1, bandeja3.getBandejaEntrada().size());
+        assertEquals(email1, bandeja3.getBandejaEntrada().get(0));
+
+    }
 }
