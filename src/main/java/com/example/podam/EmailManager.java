@@ -61,4 +61,16 @@ public class EmailManager {
     // --------> Comprobar que se cree bandeja ?? Comprobar que exista para test ??
 
     //---------> Filtros aplicados sobre EmailManager para recibidos y enviados !
+
+    public void AgregarBandejaSalida() { 
+        
+    }
+
+    public void AgregarBandejaEntrada() { 
+        
+    }
+
+    public void CrearBandeja() { 
+        
+    }
 }
