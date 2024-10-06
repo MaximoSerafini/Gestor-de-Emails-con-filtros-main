@@ -33,7 +33,7 @@ public class Filtros {
     }
 
     // Filtros complejos <--
-    public static List<Email> filtroAsuntoParaContenido(List<Email> emails, String asunto, Contacto destinatario, String contenido) {
+    public static List<Email> filtroDelAsuntoYParaQuienYContenido(List<Email> emails, String asunto, Contacto destinatario, String contenido) {
         
         Predicate<Email> porAsunto = email -> email.getAsunto().contains(asunto);
         Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));
@@ -44,7 +44,7 @@ public class Filtros {
                      .collect(Collectors.toList());
     }
 
-    public static List<Email> filtroParaContenido(List<Email> emails, Contacto destinatario, String contenido) {
+    public static List<Email> filtroParaDestinatarioYContenido(List<Email> emails, Contacto destinatario, String contenido) {
         
         Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));
         Predicate<Email> porContenido = email -> email.getContenido().contains(contenido);

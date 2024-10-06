@@ -221,7 +221,7 @@ public class TestEmails1{
         email3.setRemitente(contacto3);
 
         List<Email> correos = Arrays.asList(email1, email2, email3);
-        List<Email> resultado = Filtros.filtroAsuntoParaContenido(correos, "Test 1", contacto1, "Prueba Contenido");
+        List<Email> resultado = Filtros.filtroDelAsuntoYParaQuienYContenido(correos, "Test 1", contacto1, "Prueba Contenido");
         
         assertEquals(2, resultado.size()); // cantidad de coinc
     }
@@ -287,7 +287,7 @@ public class TestEmails1{
         email3.setRemitente(contacto3);
 
         List<Email> correos = Arrays.asList(email1, email2, email3);
-        List<Email> resultado = Filtros.filtroParaContenido(correos, contacto1, "Prueba Contenido");
+        List<Email> resultado = Filtros.filtroParaDestinatarioYContenido(correos, contacto1, "Prueba Contenido");
         
         assertEquals(2, resultado.size()); // cantidad de coinc
     }
