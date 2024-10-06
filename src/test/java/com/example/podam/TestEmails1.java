@@ -195,6 +195,38 @@ public class TestEmails1{
     }
 
     @Test
+    public void testComplejoAsuntoParaContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.para.add(contacto1);
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.para.add(contacto1);
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.para.add(contacto1);
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroAsuntoParaContenido(correos, "Test 1", contacto1, "Prueba Contenido");
+        
+        assertEquals(2, resultado.size()); // cantidad de coinc
+    }
+
+    @Test
     public void testFiltroContenido() {
 
         Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
@@ -226,6 +258,38 @@ public class TestEmails1{
         assertEquals(2, resultado.size()); // cantidad de coinc
         assertTrue(resultado.contains(email1));
         assertTrue(resultado.contains(email2));
+    }
+
+    @Test
+    public void testComplejoParaContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.para.add(contacto1);
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.para.add(contacto1);
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.para.add(contacto1);
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroParaContenido(correos, contacto1, "Prueba Contenido");
+        
+        assertEquals(2, resultado.size()); // cantidad de coinc
     }
 
     @Test
