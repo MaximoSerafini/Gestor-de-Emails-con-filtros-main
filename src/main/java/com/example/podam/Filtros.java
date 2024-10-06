@@ -54,4 +54,14 @@ public class Filtros {
                      .collect(Collectors.toList());
     }
 
+    public static List<Email> filtroAsuntoContenido(List<Email> emails, String asunto, String contenido) {
+        
+        Predicate<Email> porAsunto = email -> email.getAsunto().contains(asunto);
+        Predicate<Email> porContenido = email -> email.getContenido().contains(contenido);
+        
+        return emails.stream()
+                     .filter(porAsunto.and(porContenido))
+                     .collect(Collectors.toList());
+    }
+
 }
