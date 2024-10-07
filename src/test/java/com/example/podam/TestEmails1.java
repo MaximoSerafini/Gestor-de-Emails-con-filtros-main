@@ -38,6 +38,8 @@ public class TestEmails1{
     //    }
     
     //}
+
+    
     @Test
     public void test_asunto(){
         Email email1 = new Email();
@@ -46,6 +48,13 @@ public class TestEmails1{
 
         assertEquals("Prueba", email1.getAsunto());
     }
+    @test
+    public void test_contenido(){
+        Email email1 = new Email();
+
+        email1.setContenido("Prueba Contenido");
+
+        assertEquals("Prueba Contenido", email1.getContenido());
 
     @Test
     public void test_contenido_tambien_test_sin_asunto(){
