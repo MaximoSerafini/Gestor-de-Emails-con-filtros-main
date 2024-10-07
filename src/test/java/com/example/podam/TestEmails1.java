@@ -55,8 +55,17 @@ public class TestEmails1{
         email1.setRemitente(contacto1); 
 
         assertTrue(email1.getRemitente() != null);
+        
 
     }
+    @Test
+    public void existe_asunto(){
+        Email email1 = new Email();
+
+        assertTrue(email1.getAsunto() != null);
+
+    }
+    
     
     @Test
     public void test_asunto(){
