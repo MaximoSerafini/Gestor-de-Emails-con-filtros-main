@@ -41,10 +41,20 @@ public class TestEmails1{
     
     //}
     @Test
-    public void existe_mail(){
+    public void existe_email(){
         Email email1 = new Email();
 
         assertTrue(email1 != null);
+
+    }
+    @Test
+    public void existe_remitente(){
+        
+        Contacto contacto1 = new Contacto("Maximo Serafini","maximoserafini44@gmail.com");
+        Email email1 = new Email();
+        email1.setRemitente(contacto1); 
+
+        assertTrue(email1.getRemitente() != null);
 
     }
     
