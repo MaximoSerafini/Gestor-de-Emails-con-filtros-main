@@ -73,9 +73,7 @@ public class TestEmails1{
         assertTrue(email1.getContenido() != null);
 
     }
-
-
-
+    
     
     @Test
     public void test_asunto(){
@@ -95,7 +93,7 @@ public class TestEmails1{
 
         assertEquals("Prueba Contenido", email1.getContenido());
     }
-    @test
+    @Test
     public void test_contenido(){
         Email email1 = new Email();
 
