@@ -22,7 +22,7 @@ public class Filtros {
                      .filter(para)
                      .collect(Collectors.toList());
     }
-<<<<<<< HEAD
+
     public static List<Email> filtroRemitente(List<Email> emails, Contacto remitente) {
         
         Predicate<Email> remitenteEmail = email -> email.getRemitente().equals(remitente);
@@ -31,7 +31,7 @@ public class Filtros {
                      .filter(remitenteEmail)
                      .collect(Collectors.toList()); //filtro remitente
     }
-=======
+
 
     public static List<Email> filtroContenido(List<Email> emails, String filtro) {
     
@@ -74,5 +74,5 @@ public class Filtros {
                      .collect(Collectors.toList());
     }
 
->>>>>>> a60b5d41a94619420eeec7406c3966a0316910ce
+
 }

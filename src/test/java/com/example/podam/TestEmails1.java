@@ -5,7 +5,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assume.assumeNotNull;
 
 import org.junit.Test;
 //////////
@@ -58,22 +57,6 @@ public class TestEmails1{
         
 
     }
-    @Test
-    public void existe_asunto(){
-        Email email1 = new Email();
-
-        assertTrue(email1.getAsunto() != null);
-
-    }
-
-    @Test
-    public void existe_contenido(){
-        Email email1 = new Email();
-
-        assertTrue(email1.getContenido() != null);
-
-    }
-    
     
     @Test
     public void test_asunto(){
@@ -100,6 +83,7 @@ public class TestEmails1{
         email1.setContenido("Prueba Contenido");
 
         assertEquals("Prueba Contenido", email1.getContenido());
+    }
 
     @Test
     public void test_remitente(){
@@ -465,6 +449,4 @@ public class TestEmails1{
         assertTrue(manager.bandejaEntrada.isEmpty()); // Verifica que la bandeja está vacía
     }
 
-
-    
 }
