@@ -22,6 +22,7 @@ public class Filtros {
                      .filter(para)
                      .collect(Collectors.toList());
     }
+<<<<<<< HEAD
     public static List<Email> filtroRemitente(List<Email> emails, Contacto remitente) {
         
         Predicate<Email> remitenteEmail = email -> email.getRemitente().equals(remitente);
@@ -30,4 +31,48 @@ public class Filtros {
                      .filter(remitenteEmail)
                      .collect(Collectors.toList()); //filtro remitente
     }
+=======
+
+    public static List<Email> filtroContenido(List<Email> emails, String filtro) {
+    
+        Predicate<Email> porContenido = email -> email.getContenido().contains(filtro);
+        
+        return emails.stream()
+                     .filter(porContenido)
+                     .collect(Collectors.toList());
+    }
+
+    // Filtros complejos <--
+    public static List<Email> filtroDelAsuntoYParaQuienYContenido(List<Email> emails, String asunto, Contacto destinatario, String contenido) {
+        
+        Predicate<Email> porAsunto = email -> email.getAsunto().contains(asunto);
+        Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));
+        Predicate<Email> porContenido = email -> email.getContenido().contains(contenido);
+        
+        return emails.stream()
+                     .filter(porAsunto.and(para).and(porContenido))
+                     .collect(Collectors.toList());
+    }
+
+    public static List<Email> filtroParaDestinatarioYContenido(List<Email> emails, Contacto destinatario, String contenido) {
+        
+        Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));
+        Predicate<Email> porContenido = email -> email.getContenido().contains(contenido);
+        
+        return emails.stream()
+                     .filter(para.and(porContenido))
+                     .collect(Collectors.toList());
+    }
+
+    public static List<Email> filtroAsuntoContenido(List<Email> emails, String asunto, String contenido) {
+        
+        Predicate<Email> porAsunto = email -> email.getAsunto().contains(asunto);
+        Predicate<Email> porContenido = email -> email.getContenido().contains(contenido);
+        
+        return emails.stream()
+                     .filter(porAsunto.and(porContenido))
+                     .collect(Collectors.toList());
+    }
+
+>>>>>>> a60b5d41a94619420eeec7406c3966a0316910ce
 }

@@ -195,6 +195,136 @@ public class TestEmails1{
     }
 
     @Test
+    public void testComplejoAsuntoParaContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.para.add(contacto1);
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.para.add(contacto1);
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.para.add(contacto1);
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroDelAsuntoYParaQuienYContenido(correos, "Test 1", contacto1, "Prueba Contenido");
+        
+        assertEquals(2, resultado.size()); // cantidad de coinc
+    }
+
+    @Test
+    public void testFiltroContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.setAsunto("Prueba");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.setAsunto("Prueba");
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.setAsunto("Importante");
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroContenido(correos, "Prueba Contenido");
+
+        assertEquals(2, resultado.size()); // cantidad de coinc
+        assertTrue(resultado.contains(email1));
+        assertTrue(resultado.contains(email2));
+    }
+
+    @Test
+    public void testComplejoParaContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.para.add(contacto1);
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.para.add(contacto1);
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.para.add(contacto1);
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroParaDestinatarioYContenido(correos, contacto1, "Prueba Contenido");
+        
+        assertEquals(2, resultado.size()); // cantidad de coinc
+    }
+
+    @Test
+    public void testComplejoAsuntoContenido() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        Email email1 = new Email();
+        Email email2 = new Email();
+        Email email3 = new Email();
+
+        email1.setAsunto("Test 1");
+        email1.para.add(contacto1);
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email2.setAsunto("Test 1");
+        email2.para.add(contacto1);
+        email2.setContenido("Prueba Contenido");
+        email2.setRemitente(contacto2);
+
+        email3.setAsunto("Test 1");
+        email3.para.add(contacto1);
+        email3.setContenido("Informacion");
+        email3.setRemitente(contacto3);
+
+        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> resultado = Filtros.filtroAsuntoContenido(correos, "Test 1", "Prueba Contenido");
+        
+        assertEquals(2, resultado.size()); // cantidad de coinc
+    }
+
+    @Test
     public void guarda_email_bandeja_de_entrada(){
         Contacto alfredo = new Contacto("Alfredo", "alfredo@gmail.com");  
         EmailManager bandejaentrada = new EmailManager(alfredo);  
@@ -243,4 +373,53 @@ public class TestEmails1{
         assertEquals(remitente, bandejasalida.getPropietario());
     }
 
+    @Test
+    public void testEnviarEmail() {
+
+        Contacto contacto1 = new Contacto("Lucas", "lucas@gmail.com");
+        Contacto contacto2 = new Contacto("Maxi", "maxi@gmail.com");
+        Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
+
+        EmailManager bandeja1 = new EmailManager(contacto1); // bandejas
+        EmailManager bandeja2 = new EmailManager(contacto2);
+        EmailManager bandeja3 = new EmailManager(contacto3);
+
+        Email email1 = new Email();
+        email1.setAsunto("Asunto importante");
+        email1.setContenido("Prueba Contenido");
+        email1.setRemitente(contacto1);
+
+        email1.setPara(Arrays.asList(contacto2, contacto3));
+
+        bandeja1.enviarEmail(email1, Arrays.asList(contacto2, contacto3), Arrays.asList(bandeja1, bandeja2, bandeja3));
+
+        // bandeja salida contacto 1
+        assertEquals(1, bandeja1.getBandejaSalida().size());
+        assertEquals(email1, bandeja1.getBandejaSalida().get(0));
+
+        //copia bandeja entrada contacto 2 y 3
+        assertEquals(1, bandeja2.getBandejaEntrada().size());
+        assertEquals(email1, bandeja2.getBandejaEntrada().get(0));
+        assertEquals(1, bandeja3.getBandejaEntrada().size());
+        assertEquals(email1, bandeja3.getBandejaEntrada().get(0));
+    }
+
+    @Test
+    public void testEliminarEmail() {
+        Contacto contacto = new Contacto("Lucas", "lucas@gmail.com");
+        EmailManager manager = new EmailManager(contacto);
+
+        Email email = new Email("Asunto importante", contacto, null);
+
+        manager.bandejaEntrada.add(email);
+        assertEquals(1, manager.bandejaEntrada.size());
+
+        boolean eliminado = manager.eliminarEmail(email, manager.bandejaEntrada);
+
+        assertTrue(eliminado);
+        assertTrue(manager.bandejaEntrada.isEmpty()); // Verifica que la bandeja está vacía
+    }
+
+
+    
 }
