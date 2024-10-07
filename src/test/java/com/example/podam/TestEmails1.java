@@ -5,6 +5,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeNotNull;
+
 import org.junit.Test;
 //////////
 public class TestEmails1{
@@ -38,7 +40,13 @@ public class TestEmails1{
     //    }
     
     //}
+    @Test
+    public void existe_mail(){
+        Email email1 = new Email();
 
+        assertTrue(email1 != null);
+
+    }
     
     @Test
     public void test_asunto(){
@@ -48,13 +56,6 @@ public class TestEmails1{
 
         assertEquals("Prueba", email1.getAsunto());
     }
-    @test
-    public void test_contenido(){
-        Email email1 = new Email();
-
-        email1.setContenido("Prueba Contenido");
-
-        assertEquals("Prueba Contenido", email1.getContenido());
 
     @Test
     public void test_contenido_tambien_test_sin_asunto(){
@@ -64,6 +65,13 @@ public class TestEmails1{
 
         assertEquals("Prueba Contenido", email1.getContenido());
     }
+    @test
+    public void test_contenido(){
+        Email email1 = new Email();
+
+        email1.setContenido("Prueba Contenido");
+
+        assertEquals("Prueba Contenido", email1.getContenido());
 
     @Test
     public void test_remitente(){
