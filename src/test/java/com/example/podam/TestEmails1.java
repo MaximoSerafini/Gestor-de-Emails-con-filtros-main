@@ -65,7 +65,17 @@ public class TestEmails1{
         assertTrue(email1.getAsunto() != null);
 
     }
-    
+
+    @Test
+    public void existe_contenido(){
+        Email email1 = new Email();
+
+        assertTrue(email1.getContenido() != null);
+
+    }
+
+
+
     
     @Test
     public void test_asunto(){
@@ -75,6 +85,7 @@ public class TestEmails1{
 
         assertEquals("Prueba", email1.getAsunto());
     }
+
 
     @Test
     public void test_contenido_tambien_test_sin_asunto(){
