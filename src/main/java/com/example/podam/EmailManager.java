@@ -50,18 +50,6 @@ public class EmailManager {
         }
     }
     
-    // FALTAN AGREGAR QUIZÁS :p
-
-    // --------> Agregar a bandeja de salida
-
-    // --------> Agregar a bandeja de entrada
-
-    // --------> Crear bandeja ??
-
-    // --------> Comprobar que se cree bandeja ?? Comprobar que exista para test ??
-
-    //---------> Filtros aplicados sobre EmailManager para recibidos y enviados !
-
     public void AgregarBandejaSalida() { 
         
     }
