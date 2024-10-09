@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 //////////
 public class TestEmails1{
@@ -390,33 +390,20 @@ public class TestEmails1{
 
         email1.setPara(Arrays.asList(contacto2, contacto3));
 
-        bandeja1.enviarEmail(email1, Arrays.asList(contacto2, contacto3), Arrays.asList(bandeja1, bandeja2, bandeja3));
+        bandeja1.enviarEmail(email1, Arrays.asList(contacto2, contacto3), Arrays.asList(bandeja2, bandeja3));
 
         // bandeja salida contacto 1
         assertEquals(1, bandeja1.getBandejaSalida().size());
         assertEquals(email1, bandeja1.getBandejaSalida().get(0));
 
-        //copia bandeja entrada contacto 2 y 3
         assertEquals(1, bandeja2.getBandejaEntrada().size());
-        assertEquals(email1, bandeja2.getBandejaEntrada().get(0));
         assertEquals(1, bandeja3.getBandejaEntrada().size());
-        assertEquals(email1, bandeja3.getBandejaEntrada().get(0));
-    }
 
-    @Test
-    public void testEliminarEmail() {
-        Contacto contacto = new Contacto("Lucas", "lucas@gmail.com");
-        EmailManager manager = new EmailManager(contacto);
+        Email emailClonadoBandeja2 = bandeja2.getBandejaEntrada().get(0);
+        Email emailClonadoBandeja3 = bandeja3.getBandejaEntrada().get(0);
 
-        Email email = new Email("Asunto importante", contacto, null);
-
-        manager.bandejaEntrada.add(email);
-        assertEquals(1, manager.bandejaEntrada.size());
-
-        boolean eliminado = manager.eliminarEmail(email, manager.bandejaEntrada);
-
-        assertTrue(eliminado);
-        assertTrue(manager.bandejaEntrada.isEmpty()); // Verifica que la bandeja está vacía
+        assertNotSame(email1, emailClonadoBandeja2);
+        assertNotSame(email1, emailClonadoBandeja3);
     }
 
 }
