@@ -49,4 +49,17 @@ public class Email {
     public void setRemitente(Contacto remitente){
         this.remitente = remitente;
     }  // Setter para remitente
+
+    public Email clonar() {
+
+        Email emailClon= new Email();
+        emailClon.setAsunto(this.asunto);
+        emailClon.setContenido(this.contenido);
+        emailClon.setRemitente(this.remitente);
+
+        List<Contacto> copiaPara = new ArrayList<>(this.para);
+        emailClon.setPara(copiaPara);
+
+        return emailClon;
+    }
 }

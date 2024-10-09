@@ -44,7 +44,7 @@ public class EmailManager {
         for (Contacto destinatario : destinatarios) {              //                             y llamar directamente en enviarEMail
             for (EmailManager manager : managers) {
                 if (manager.getPropietario().equals(destinatario)) {
-                    manager.getBandejaEntrada().add(email);
+                manager.getBandejaEntrada().add(email.clonar());
                 }
             }
         }

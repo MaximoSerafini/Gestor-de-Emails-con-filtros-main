@@ -5,20 +5,18 @@ import java.util.stream.Collectors;
 
 public class Filtros {
 
-    // Filtra los emails cuyo asunto contiene la palabra clave dada
     public static List<Email> filtroAsunto(List<Email> emails, String filtro) {
-        Predicate<Email> porAsunto = email -> email.getAsunto().contains(filtro);  // Criterio de filtro por asunto
+        Predicate<Email> porAsunto = email -> email.getAsunto().contains(filtro); 
         return emails.stream()
-                     .filter(porAsunto)  // Aplica el filtro
-                     .collect(Collectors.toList());  // Recoge el resultado en una lista
+                     .filter(porAsunto)  
+                     .collect(Collectors.toList()); 
     }
     
-    // Filtra los emails que tienen al destinatario especificado en la lista "para"
     public static List<Email> filtroPara(List<Email> emails, Contacto destinatario) {
         Predicate<Email> para = email -> email.getPara().stream().anyMatch(contacto -> contacto.equals(destinatario));  // Criterio de filtro por destinatario
         return emails.stream()
-                     .filter(para)  // Aplica el filtro
-                     .collect(Collectors.toList());  // Recoge el resultado en una lista
+                     .filter(para)
+                     .collect(Collectors.toList()); 
     }
 
     // Filtra los emails cuyo remitente coincide con el contacto especificado
