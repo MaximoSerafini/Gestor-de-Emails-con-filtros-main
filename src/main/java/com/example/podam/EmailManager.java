@@ -40,8 +40,8 @@ public class EmailManager {
     //enviar email: agregamos mail a la salida y copiamos para destinatarios multiples
     public void enviarEmail(Email email, List<Contacto> destinatarios, List<EmailManager> managers) { 
         //correo enviado / dest / cada bandeja (email manager)
-        bandejaSalida.add(email);                                  ///////////----------------> Esto agregar a bandeja de salida 
-        for (Contacto destinatario : destinatarios) {              //                             y llamar directamente en enviarEMail
+        bandejaSalida.add(email);                          
+        for (Contacto destinatario : destinatarios) {            
             for (EmailManager manager : managers) {
                 if (manager.getPropietario().equals(destinatario)) {
                 manager.getBandejaEntrada().add(email.clonar());
@@ -50,18 +50,6 @@ public class EmailManager {
         }
     }
     
-    public void AgregarBandejaSalida() { 
-        
-    }
-
-    public void AgregarBandejaEntrada() { 
-        
-    }
-
-    public void CrearBandeja() { 
-        
-    }
-
     public boolean eliminarEmail(Email email, List<Email> bandeja) {
         return bandeja.remove(email); 
     }

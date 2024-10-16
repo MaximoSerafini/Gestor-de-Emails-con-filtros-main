@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNotSame; 
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 //////////
@@ -154,19 +154,16 @@ public class TestEmails1{
         Email email2 = new Email();
         Email email3 = new Email();
 
-        email1.setAsunto("Test 1");
         email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
         email1.setRemitente(contacto1);
 
-        email2.setAsunto("Test 1");
         email2.setAsunto("Prueba");
         email2.setContenido("Prueba Contenido");
         email2.setRemitente(contacto2);
 
         email3.setAsunto("Test 1");
-        email3.setAsunto("aaaaa");
-        email3.setContenido("Prueba aaaa");
+        email3.setContenido("Probando");
         email3.setRemitente(contacto3);
 
         List<Email> correos = Arrays.asList(email1, email2, email3);
@@ -237,12 +234,10 @@ public class TestEmails1{
         Email email3 = new Email();
 
         email1.setAsunto("Test 1");
-        email1.setAsunto("Prueba");
         email1.setContenido("Prueba Contenido");
         email1.setRemitente(contacto1);
 
         email2.setAsunto("Test 1");
-        email2.setAsunto("Prueba");
         email2.setContenido("Prueba Contenido");
         email2.setRemitente(contacto2);
 
@@ -266,14 +261,8 @@ public class TestEmails1{
         Contacto contacto2 = new Contacto("Maxi","maxi@gmail.com");
         Contacto contacto3 = new Contacto("Santi", "santi@gmail.com");
 
-        Email email1 = new Email();
         Email email2 = new Email();
         Email email3 = new Email();
-
-        email1.setAsunto("Test 1");
-        email1.para.add(contacto1);
-        email1.setContenido("Prueba Contenido");
-        email1.setRemitente(contacto1);
 
         email2.setAsunto("Test 1");
         email2.para.add(contacto1);
@@ -282,10 +271,10 @@ public class TestEmails1{
 
         email3.setAsunto("Test 1");
         email3.para.add(contacto1);
-        email3.setContenido("Informacion");
+        email3.setContenido("Prueba Contenido");
         email3.setRemitente(contacto3);
 
-        List<Email> correos = Arrays.asList(email1, email2, email3);
+        List<Email> correos = Arrays.asList(email2, email3);
         List<Email> resultado = Filtros.filtroParaDestinatarioYContenido(correos, contacto1, "Prueba Contenido");
         
         assertEquals(2, resultado.size()); // cantidad de coinc
@@ -320,7 +309,7 @@ public class TestEmails1{
         List<Email> correos = Arrays.asList(email1, email2, email3);
         List<Email> resultado = Filtros.filtroAsuntoContenido(correos, "Test 1", "Prueba Contenido");
         
-        assertEquals(2, resultado.size()); // cantidad de coinc
+        assertEquals(2, resultado.size());
     }
 
     @Test
@@ -392,7 +381,6 @@ public class TestEmails1{
 
         bandeja1.enviarEmail(email1, Arrays.asList(contacto2, contacto3), Arrays.asList(bandeja2, bandeja3));
 
-        // bandeja salida contacto 1
         assertEquals(1, bandeja1.getBandejaSalida().size());
         assertEquals(email1, bandeja1.getBandejaSalida().get(0));
 
@@ -404,6 +392,11 @@ public class TestEmails1{
 
         assertNotSame(email1, emailClonadoBandeja2);
         assertNotSame(email1, emailClonadoBandeja3);
+        emailClonadoBandeja2.setAsunto("APROBADO");
+        
+        assertEquals("Asunto importante", email1.getAsunto());
+        assertEquals("APROBADO", emailClonadoBandeja2.getAsunto());
+        assertEquals("Asunto importante", emailClonadoBandeja3.getAsunto());
     }
 
 }

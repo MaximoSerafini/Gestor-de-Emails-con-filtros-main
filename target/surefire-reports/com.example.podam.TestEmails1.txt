@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.podam.TestEmails1
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.137 s <<< FAILURE! - in com.example.podam.TestEmails1
-testEnviarEmail(com.example.podam.TestEmails1)  Time elapsed: 0.008 s  <<< FAILURE!
-java.lang.AssertionError: expected:<com.example.podam.Email@482f8f11> but was:<com.example.podam.Email@1593948d>
-	at com.example.podam.TestEmails1.testEnviarEmail(TestEmails1.java:401)
-
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in com.example.podam.TestEmails1
