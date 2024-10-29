@@ -37,12 +37,12 @@ public class GrupoDeUsuarios{
         return contactos.contains(contacto);
     }
 
-    // Metodo para enviar un correo a todos los contactos del grupo
-    public void enviarCorreoAGrupo(String asunto, String contenido) {
+    public Email enviarCorreoAGrupo(String asunto, String contenido) {
         Email email = new Email();
         email.setAsunto(asunto);
         email.setContenido(contenido);
         email.setRemitente(propietario);
         email.setPara(new ArrayList<>(contactos)); // Asigna una copia de la lista de contactos como destinatarios
+        return email; // Retorna el email para permitir su verificación en el test
     }
 }
