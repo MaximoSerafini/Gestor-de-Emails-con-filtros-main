@@ -2,13 +2,12 @@ package com.example.podam;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// hola
 public class Contacto {
     private String name;  // Nombre del contacto
     private String mail;  // Correo electrónico
     private List<Email> favoritos;  // Lista de correos favoritos del contacto
     
-
     public Contacto() {
         this.favoritos = new ArrayList<>();
     }  // Constructor por defecto
