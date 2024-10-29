@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Favorito {
-    private List<Email> favoritos;
+    private Contacto propietario;  // Contacto dueño de esta lista de favoritos
+    private List<Email> favoritos; // Lista de correos favoritos
 
-    public Favorito() {
+    public Favorito(Contacto propietario) {
+        this.propietario = propietario;
         this.favoritos = new ArrayList<>();
+    }
+
+    public Contacto getPropietario() {
+        return propietario;
     }
 
     public List<Email> getFavoritos() {
