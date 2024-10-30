@@ -1,11 +1,18 @@
 package com.example.podam;
 
-import org.junit.Test;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 public class TestEmails2 {
+
+    @Test
+    public void testGetPropietario() {
+        Contacto propietario = new Contacto("Propietario", "propietario@mail.com");
+        Favorito favorito = new Favorito(propietario);
+        assertEquals(propietario, favorito.getPropietario());
+    }
 
     @Test
     public void TestFavorito() {
