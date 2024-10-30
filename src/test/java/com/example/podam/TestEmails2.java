@@ -15,6 +15,16 @@ public class TestEmails2 {
     }
 
     @Test
+    public void testAgregarFavorito() {
+        Contacto propietario = new Contacto("Propietario", "propietario@mail.com");
+        Favorito favorito = new Favorito(propietario);
+        Email email1 = new Email();
+
+        favorito.agregarFavorito(email1);
+        assertTrue(favorito.getFavoritos().contains(email1));
+    }
+
+    @Test
     public void TestFavorito() {
         Contacto propietario = new Contacto("Propietario", "propietario@example.com");
         Favorito favorito = new Favorito(propietario);
