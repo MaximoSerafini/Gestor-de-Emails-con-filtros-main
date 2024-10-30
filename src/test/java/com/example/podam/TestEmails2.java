@@ -104,4 +104,27 @@ public class TestEmails2 {
         // Verifica que el otro contacto sigue en el grupo
         assertTrue(grupoAmigos.contieneContacto(contacto2));
     }
+
+    @Test
+    public void testEliminarFavorito() {
+        Contacto propietario = new Contacto("Propietario", "propietario@mail.com");
+        Favorito favorito = new Favorito(propietario);
+        Email email1 = new Email();
+        
+        favorito.agregarFavorito(email1);
+        boolean eliminado = favorito.eliminarFavorito(email1);
+        assertTrue(eliminado);
+        assertFalse(favorito.getFavoritos().contains(email1));
+    }
+
+    @Test
+    public void testDuplicados() { //verificamos que se agreguen una sola vez
+        Contacto propietario = new Contacto("Propietario", "propietario@mail.com");
+        Favorito favorito = new Favorito(propietario);
+        Email email1 = new Email();
+        
+        favorito.agregarFavorito(email1);
+        favorito.agregarFavorito(email1); 
+        assertEquals(1, favorito.getFavoritos().size());
+    }
 }
