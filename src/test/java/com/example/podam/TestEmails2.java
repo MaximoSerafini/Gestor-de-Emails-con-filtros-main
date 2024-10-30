@@ -127,4 +127,16 @@ public class TestEmails2 {
         favorito.agregarFavorito(email1); 
         assertEquals(1, favorito.getFavoritos().size());
     }
+
+    @Test
+    public void testEsFavorito() {
+        Contacto propietario = new Contacto("Propietario", "propietario@mail.com");
+        Favorito favorito = new Favorito(propietario);
+        Email email1 = new Email();
+        Email email2 = new Email();
+
+        favorito.agregarFavorito(email1);
+        assertTrue(favorito.esFavorito(email1));
+        assertFalse(favorito.esFavorito(email2));
+    }
 }
