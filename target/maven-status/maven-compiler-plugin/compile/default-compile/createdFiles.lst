@@ -1,5 +1,6 @@
 com\example\podam\ChatServiceGrpc.class
 com\example\podam\ChatServiceGrpc$3.class
+com\example\podam\GrpcClient.class
 com\example\podam\MessageReply$Builder.class
 com\example\podam\MessageRequest$1.class
 com\example\podam\ChatServiceGrpc$1.class
