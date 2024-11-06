@@ -65,11 +65,12 @@ public class TestEmails2 {
         grupoAmigos.agregarAlGrupo(contacto1);
         grupoAmigos.agregarAlGrupo(contacto2);
 
+        // hay que hacerlo email
         String asunto = "Reunión";
         String contenido = "Contenido del correo";
 
         // Captura el email enviado al grupo
-        Email emailEnviado = grupoAmigos.enviarCorreoAGrupo(asunto, contenido);
+        Email emailEnviado = grupoAmigos.enviarCorreoAGrupo(asunto, contenido); // arreglar, como el para
 
         // Verifica que el email fue enviado con el asunto y contenido correctos
         assertEquals(asunto, emailEnviado.getAsunto());
