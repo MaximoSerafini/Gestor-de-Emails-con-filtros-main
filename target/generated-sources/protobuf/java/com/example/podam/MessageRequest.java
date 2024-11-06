@@ -4,11 +4,11 @@
 package com.example.podam;
 
 /**
- * Protobuf type {@code podam.MessageRequest}
+ * Protobuf type {@code MessageRequest}
  */
 public final class MessageRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:podam.MessageRequest)
+    // @@protoc_insertion_point(message_implements:MessageRequest)
     MessageRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MessageRequest.newBuilder() to construct.
@@ -28,13 +28,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.podam.ChatServiceProto.internal_static_podam_MessageRequest_descriptor;
+    return com.example.podam.ChatServiceProto.internal_static_MessageRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.podam.ChatServiceProto.internal_static_podam_MessageRequest_fieldAccessorTable
+    return com.example.podam.ChatServiceProto.internal_static_MessageRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.example.podam.MessageRequest.class, com.example.podam.MessageRequest.Builder.class);
   }
@@ -235,21 +235,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code podam.MessageRequest}
+   * Protobuf type {@code MessageRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:podam.MessageRequest)
+      // @@protoc_insertion_point(builder_implements:MessageRequest)
       com.example.podam.MessageRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.podam.ChatServiceProto.internal_static_podam_MessageRequest_descriptor;
+      return com.example.podam.ChatServiceProto.internal_static_MessageRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.podam.ChatServiceProto.internal_static_podam_MessageRequest_fieldAccessorTable
+      return com.example.podam.ChatServiceProto.internal_static_MessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.podam.MessageRequest.class, com.example.podam.MessageRequest.Builder.class);
     }
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.podam.ChatServiceProto.internal_static_podam_MessageRequest_descriptor;
+      return com.example.podam.ChatServiceProto.internal_static_MessageRequest_descriptor;
     }
 
     @java.lang.Override
@@ -488,10 +488,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:podam.MessageRequest)
+    // @@protoc_insertion_point(builder_scope:MessageRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:podam.MessageRequest)
+  // @@protoc_insertion_point(class_scope:MessageRequest)
   private static final com.example.podam.MessageRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.example.podam.MessageRequest();

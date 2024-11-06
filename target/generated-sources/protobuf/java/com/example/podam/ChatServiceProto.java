@@ -15,15 +15,15 @@ public final class ChatServiceProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_podam_MessageRequest_descriptor;
+    internal_static_MessageRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_podam_MessageRequest_fieldAccessorTable;
+      internal_static_MessageRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_podam_MessageReply_descriptor;
+    internal_static_MessageReply_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_podam_MessageReply_fieldAccessorTable;
+      internal_static_MessageReply_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,28 +33,27 @@ public final class ChatServiceProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nchat.proto\022\005podam\"!\n\016MessageRequest\022\017\n" +
-      "\007content\030\001 \001(\t\" \n\014MessageReply\022\020\n\010respon" +
-      "se\030\001 \001(\t2H\n\013ChatService\0229\n\013SendMessage\022\025" +
-      ".podam.MessageRequest\032\023.podam.MessageRep" +
-      "lyB-\n\021com.example.podamB\020ChatServiceProt" +
-      "oP\001\242\002\003HLWb\006proto3"
+      "\n\nchat.proto\"!\n\016MessageRequest\022\017\n\007conten" +
+      "t\030\001 \001(\t\" \n\014MessageReply\022\020\n\010response\030\001 \001(" +
+      "\t2<\n\013ChatService\022-\n\013SendMessage\022\017.Messag" +
+      "eRequest\032\r.MessageReplyB-\n\021com.example.p" +
+      "odamB\020ChatServiceProtoP\001\242\002\003HLWb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_podam_MessageRequest_descriptor =
+    internal_static_MessageRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_podam_MessageRequest_fieldAccessorTable = new
+    internal_static_MessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_podam_MessageRequest_descriptor,
+        internal_static_MessageRequest_descriptor,
         new java.lang.String[] { "Content", });
-    internal_static_podam_MessageReply_descriptor =
+    internal_static_MessageReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_podam_MessageReply_fieldAccessorTable = new
+    internal_static_MessageReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_podam_MessageReply_descriptor,
+        internal_static_MessageReply_descriptor,
         new java.lang.String[] { "Response", });
   }
 

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.podam";
+option java_outer_classname = "ChatServiceProto";
+option objc_class_prefix = "HLW";
+
+service ChatService {
+    rpc SendMessage (MessageRequest) returns (MessageReply);
+}
+
+message MessageRequest {
+    string content = 1;
+}
+
+message MessageReply {
+    string response = 1;
+}

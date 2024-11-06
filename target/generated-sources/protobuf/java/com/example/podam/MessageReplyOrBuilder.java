@@ -4,7 +4,7 @@
 package com.example.podam;
 
 public interface MessageReplyOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:podam.MessageReply)
+    // @@protoc_insertion_point(interface_extends:MessageReply)
     com.google.protobuf.MessageOrBuilder {
 
   /**

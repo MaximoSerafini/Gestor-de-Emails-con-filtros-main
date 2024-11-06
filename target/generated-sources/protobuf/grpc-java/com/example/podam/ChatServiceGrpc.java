@@ -12,7 +12,7 @@ public final class ChatServiceGrpc {
 
   private ChatServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "podam.ChatService";
+  public static final String SERVICE_NAME = "ChatService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.podam.MessageRequest,
