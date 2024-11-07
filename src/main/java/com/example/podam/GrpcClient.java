@@ -6,7 +6,7 @@ import io.grpc.ManagedChannelBuilder;
 public class GrpcClient {
     public static void main(String[] args) {
         // crea canal
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)//probar ip
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("181.106.218.71", 9090)//probar ip
                 .usePlaintext()
                 .build();
 

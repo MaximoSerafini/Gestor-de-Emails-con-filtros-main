@@ -52,15 +52,38 @@
   </dependencies>
 
   <build>
-    <extensions>
+
+  <pluginManagement>
+    <plugins>
+            <plugin> 
+            <artifactId>maven-jar-plugin</artifactId> 
+              <configuration> 
+                <verbose>true</verbose> 
+                  <includes>
+                            <include>**/*.java</include>
+                            </includes>
+              </configuration> 
+            </plugin> 
+    </plugins>
+</pluginManagement>
+
+<extensions>
         <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
         <version>1.7.1</version>
       </extension>
-    </extensions>
+</extensions>
 
     <plugins>
+    <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <mainClass>${mainClass}</mainClass>
+            </configuration>
+        </plugin>
       <plugin>
             <groupId>org.xolstice.maven.plugins</groupId>
             <artifactId>protobuf-maven-plugin</artifactId>
@@ -122,4 +145,19 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+        <id>grpc-server</id>
+        <properties>
+            <mainClass>com.example.podam.GrpcServer</mainClass>
+        </properties>
+    </profile>
+    <profile>
+        <id>grpc-client</id>
+        <properties>
+            <mainClass>com.example.podam.GrpcClient</mainClass>
+        </properties>
+    </profile>
+</profiles>
 </project>
